@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 
-// socket.io setup
 const http = require('http')
 const server = http.createServer(app)
 const { Server } = require('socket.io')
@@ -56,7 +55,6 @@ io.on('connection', (socket) => {
       username
     }
 
-    // where we init our canvas
     backEndPlayers[socket.id].canvas = {
       width,
       height
@@ -114,9 +112,7 @@ io.on('connection', (socket) => {
   })
 })
 
-// backend ticker
 setInterval(() => {
-  // update projectile positions
   for (const id in backEndProjectiles) {
     backEndProjectiles[id].x += backEndProjectiles[id].velocity.x
     backEndProjectiles[id].y += backEndProjectiles[id].velocity.y
@@ -141,8 +137,6 @@ setInterval(() => {
         backEndProjectiles[id].x - backEndPlayer.x,
         backEndProjectiles[id].y - backEndPlayer.y
       )
-
-      // collision detection
       if (
         DISTANCE < PROJECTILE_RADIUS + backEndPlayer.radius &&
         backEndProjectiles[id].playerId !== playerId
