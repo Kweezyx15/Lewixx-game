@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VEEEEEEEEEE</title>
+  </head>
+  <body>
+    <img src="img/credits.jpg" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        background-color: #54615f;
+      }
+
+      img {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .title {
+        display: flex;
+        justify-content: center;
+        font-size: 50px;
+        font-family: system-ui, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+
+      span{
+        color: white;
+      }
+
+      li{
+        list-style: none;
+        display: flex;
+      }
+
+      .list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+      #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .videoo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+
+    <div class="title">
+      <h1>İlk Öncelikle <span>Ekip</span></h1>
+    </div>
+    <div class="list">
+        <ul>
+            <li>
+                <p>Yönetici:  <span>Lewixx</span></p>
+            </li>
+            <li>
+                <p>Backend: <span>Lewixx</span></p>
+            </li>
+            <li>
+                <p>UI & Game: <span>Lewixx</span></p>
+            </li>
+            <li>
+                <p>Motivasyon: <span>Kuzey Köse</span></p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="videoo"><h1>Ve Son Olarak Y tuşuna Bas</h1></div>
+      
+      <script>
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'y') {
+            // Ekrandaki bütün öğeleri silme
+            document.body.innerHTML = '';
+      
+            // Video elemanını oluşturma ve ekranı kaplaması için stil ekleme
+            var video = document.createElement('video');
+            video.id = 'background-video';
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.controls = true;
+            video.style.position = 'fixed';
+            video.style.top = '0';
+            video.style.left = '0';
+            video.style.width = '100%';
+            video.style.height = '100%';
+            video.innerHTML = '<source src="img/cat.mp4" type="video/mp4">Tarayıcınız video etiketini desteklemiyor.';
+            document.body.appendChild(video);
+          }
+        });
+      </script>
+  </body>
+</html>
